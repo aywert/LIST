@@ -71,7 +71,8 @@ int list_dump(my_list* lst)
         fprintf(lst->log, "%4d ", lst->prev[i]);
     }
     printf("check log_file\n");
-
+    system("dot -T png log_files//graph_log.dot -o  log_files//graph_log.png");
+    printf("Graph have been genirated\n");
     return 0;
 }
 
@@ -90,7 +91,7 @@ int insert_lst(my_list* lst, int position, int value)
 {
     int free = find_free_cell(lst);
     lst->data[free] = value; //присваиваем пустой ячейке данное значение
-    //lst->next[free] = position + 1;
+    lst->next[free] = position + 1;
 
     if (position == 0)
         lst->next[position] = 0;

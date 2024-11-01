@@ -1,0 +1,5 @@
+digraph 
+{
+    spam -> "eggs eggs"
+    "node" -> "\"here's a quote\""
+}
